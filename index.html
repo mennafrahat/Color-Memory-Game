@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Memory Game — Final</title>
+
+<link href="style.css" rel="stylesheet"/></head>
+<body>
+<h1>Memory Game</h1>
+<div class="page active box" id="page1">
+<label>Players: </label>
+<select id="numPlayers" onchange="renderNameInputs()">
+<option value="1">1 Player</option>
+<option value="2">2 Players</option>
+<option value="3">3 Players</option>
+<option value="4">4 Players</option>
+</select>
+<div id="nameInputs"></div>
+<button onclick="goToPage2()">Next</button>
+</div>
+<div class="page box" id="page2">
+<label>Mode: </label>
+<select id="mode">
+<option>Easy</option>
+<option>Medium</option>
+<option>Normal</option>
+<option>Hard</option>
+</select>
+<button onclick="startGame()">Start</button>
+</div>
+<div class="page" id="page3">
+<div id="currentPlayer"></div>
+<div id="gameContainer">
+<div id="tiles"></div>
+<table id="scoreboard"></table>
+</div>
+<div class="message" id="message"></div>
+</div>
+<div id="winnerBox"></div>
+
+<script src="script.js"></script></body>
+</html>

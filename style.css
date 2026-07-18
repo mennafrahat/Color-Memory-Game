@@ -1,0 +1,147 @@
+
+        :root {
+            --tile-size: 100px;
+        }
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: linear-gradient(135deg, #ffe4e6, #fef2f2);
+            text-align: center;
+            overflow-x: hidden;
+            color: #000000;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 20px;
+            color: #9f3ae4;
+        }
+        .page { display: none; }
+        .active { display: block; }
+
+        .box {
+            background: #ffffff;
+            border-radius: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid #f9a8d4;
+            padding: 25px;
+            width: 350px;
+            margin: 20px auto;
+            font-size: 1.4em;
+            color: #000000;
+        }
+        .box label { 
+            font-weight: bold; 
+            font-size: 1.3em;
+            color: #f472b6;
+        }
+
+        #gameContainer {
+            text-align: center;
+            margin: 20px auto;
+            width: 900px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        #tiles {
+            display: grid;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tile {
+            width: var(--tile-size);
+            height: var(--tile-size);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+        }
+        .tile:hover { transform: scale(1.08); }
+
+        .tile.computer-choice {
+            filter: brightness(80%);
+            box-shadow: 0 0 25px 12px rgba(249, 168, 212, 0.7);
+            transform: translateY(-10px) scale(1.1);
+        }
+
+        .tile.active-glow {
+            box-shadow: 0 0 25px 8px rgba(159, 58, 228, 0.8);
+            border: 3px solid #9f3ae4;
+        }
+
+        #scoreboard {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 320px;
+            background: #ffe4e6;
+            border: 1px solid #000000;
+            height: fit-content;
+            font-size: 1.2em;
+        }
+        #scoreboard th, #scoreboard td {
+            border: 1px solid #000000;
+            padding: 12px;
+            text-align: center;
+            color: #000000;
+        }
+        #scoreboard th {
+            background: #ffffff;
+            color: #9f3ae4;
+            font-size: 1.3em;
+        }
+
+        #currentPlayer {
+            font-weight: bold;
+            margin-top: 15px;
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #f9a8d4;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 15px;
+            width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.3em;
+            color: #f472b6;
+        }
+
+        .message {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-top: 15px;
+            color: #f472b6;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+        }
+
+        #winnerBox {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffffff;
+            padding: 25px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            font-size: 1.7em;
+            font-weight: bold;
+            color: #f472b6;
+            z-index: 1000;
+        }
+
+        .balloon {
+            position: fixed;
+            bottom: -150px;
+            width: 60px;
+            height: 80px;
+            border-radius: 50% 50% 50% 50%;
+            animation: rise 6s linear infinite;
+            z-index: 999;
+        }
+        @keyframes rise {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+        }
+    
